@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.tvz.pejkunovic.demo.OdabirPetorkeController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.199951171875" minWidth="10.0" prefWidth="306.39996337890625" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.199951171875" minWidth="10.0" prefWidth="306.39996337890625" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="299.20001220703125" minWidth="10.0" prefWidth="293.60003662109375" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="52.00000228881836" minHeight="10.0" prefHeight="52.00000228881836" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="87.80000000000001" minHeight="10.0" prefHeight="41.40001220703124" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="91.79998779296875" minHeight="10.0" prefHeight="58.20001220703125" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="95.40000305175784" minHeight="10.0" prefHeight="38.199993896484386" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="95.40000305175784" minHeight="10.0" prefHeight="38.199993896484386" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="112.8" minHeight="0.0" prefHeight="73.40002441406253" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="102.00002746582032" minHeight="10.0" prefHeight="41.39997558593751" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="129.9999938964844" minHeight="10.0" prefHeight="22.40001220703124" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="127.60001220703123" minHeight="10.0" prefHeight="45.600006103515625" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Ovdje odabirete svoju petorku" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+      <TableView fx:id="sviStudentiTableView" prefHeight="62.0" prefWidth="580.0" GridPane.columnSpan="3" GridPane.rowIndex="3" GridPane.rowSpan="3">
+        <columns>
+          <TableColumn fx:id="sviStudentiImeColumn" prefWidth="203.20001828670502" text="Ime i prezime" />
+          <TableColumn fx:id="sviStudentiFakultetColumn" minWidth="0.0" prefWidth="202.39996337890625" text="Fakultet" />
+            <TableColumn fx:id="sviStudentiPozicijaColumn" maxWidth="503.99991607666016" minWidth="0.0" prefWidth="195.19998168945312" text="Pozicija" />
+        </columns>
+      </TableView>
+      <Label text="Pretrazi po fakultetu" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <TextField fx:id="pretragaPoImenuTextField" prefHeight="19.0" prefWidth="300.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <Label text="Pretrazi po imenu i prezimenu" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <TextField fx:id="pretragaPoPozicijiTextField" prefHeight="19.0" prefWidth="300.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <Button fx:id="pretraziPoFakultetuButton" mnemonicParsing="false" onMouseClicked="#dohvatiPoKriteriju" text="Pretrazi" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      <TextField fx:id="pretragaPoFakultetuTextField" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </GridPane.margin>
+      </TextField>
+      <Label text="Pretrazi po poziciji" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+      <Label text="Odabrani igraci" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
+      <Button fx:id="dodajStudentaUPetorkuButton" mnemonicParsing="false" onAction="#dodajStudentaUPetorku" text="Dodaj igraca u petorku" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <Button fx:id="makniStudentaIzPetorkeButton" mnemonicParsing="false" onAction="#makniStudentaIzPetorke" text="Makni igraca iz petorke" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+      <TableView fx:id="odabraniStudentiTableView" prefHeight="200.0" GridPane.columnSpan="3" GridPane.rowIndex="7" GridPane.rowSpan="2">
+        <columns>
+          <TableColumn fx:id="odabraniStudentiImeColumn" prefWidth="204.79999387264252" text="Ime i prezime" />
+          <TableColumn fx:id="odabraniStudentiFakultetColumn" prefWidth="207.20001220703125" text="Fakultet" />
+            <TableColumn fx:id="odabraniStudentiPozicijaColumn" prefWidth="189.59994506835938" text="Pozicija" />
+        </columns>
+      </TableView>
+      <Button mnemonicParsing="false" onMouseClicked="#otvoriSimulator" text="Otvori simulator" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" onMouseClicked="#otvoriInformacijeOStudentu" text="Informacije o igracu" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" onMouseClicked="#otvoriLeaderboardLige" text="Otvori ljestvicu lige" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" onMouseClicked="#otvoriPopisUtakmica" text="Otvori popis utakmica" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
+      <Button mnemonicParsing="false" onMouseClicked="#promjeniLigu" text="Promijeni ligu" GridPane.halignment="LEFT" GridPane.valignment="BASELINE" />
+   </children>
+</GridPane>
